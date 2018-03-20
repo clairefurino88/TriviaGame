@@ -1,15 +1,19 @@
 
 body{
 	background-color: salmon;
-	font-family: 'Raleway', sans-serif;
-	font-size: 30px;
+	font-family: 'Rammetto One', cursive;
+    font-size: 30px;
+   /* height: 400px;*/
 }
 
 header{
     margin-bottom: 20px;
-   
+    border: 10px;
 }
+footer.fixed {
+    position: fixed;
 
+}
 .btn-primary,.reset{
 	background-color: greenyellow;
 	color: white;
@@ -50,3 +54,36 @@ h2, #message, #finalMessage{
 		size: 200%;
 	}	
 }
+
+  
+.btn-primary:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+  }
+  
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+
+  .thisChoice:hover:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+  }
+  
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }

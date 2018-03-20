@@ -5,31 +5,35 @@
     <meta charset="UTF-8">
     <title>movie Trivia</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Sigmar+One" rel="stylesheet">
-  
+   <!-- Text font from google -->
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        
 
-
-        <div style="background-color:yellow; text-align: center;">
-        
+        <div style="background-color:yellow; text-align: center; height: 150px;">
+        <br>
             <h1>The Trivia Game</h1>
-
-        
+            
         </div>
 
 
     </header>
+
+    <div class= 'directions' style="padding: 15px; text-align: center;font-family:Arial, Helvetica, sans-serif;">
+            <p>There are 7 questions. You will have 15 seconds for each question. Work quickly and good luck!</p>
+    </div>
+
     <div class='container'>
         <button class='btn btn-primary' id='startBtn'>Start</button>
         <!-- Question page -->
         <div id=timeLeft></div>
         <div id=currentQuestion></div>
-        <div class='question'></div>
+        <b><div class='question'></div></b>
         <div class='answerList'></div>
         <!-- Answer Page -->
         <div id=message></div>
@@ -42,6 +46,11 @@
         <div id=unanswered></div>
         <div id='startOverBtn'></div>
     </div>
+
+    <footer style="text-align: center; height: 100px; background-color: yellow; font-family:Arial, Helvetica, sans-serif;">
+            <br><p>© 2018 Claire Furino</p> 
+    </footer>
+
    <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
