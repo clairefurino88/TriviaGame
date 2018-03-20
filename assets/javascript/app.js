@@ -31,8 +31,8 @@ var triviaQuestions = [{
 
 
 var currentQuestion; 
-var correctAnswer; 
-var incorrectAnswer; 
+var correctAnswer; //correct answers
+var incorrectAnswer; //incorrect answers
 var unanswered; 
 var seconds; 
 var time; 
@@ -71,7 +71,6 @@ function newGame(){
 function newQuestion(){
 	$('#message').empty();
 	$('#correctedAnswer').empty();
-	$('#gif').empty();
 	answered = true;
 	
 	//sets up new questions & answerList
@@ -147,7 +146,7 @@ function scoreboard(){
 	$('#timeLeft').empty();
 	$('#message').empty();
 	$('#correctedAnswer').empty();
-	$('#gif').empty();
+	
 
 	$('#finalMessage').html(messages.finished);
 	$('#correctAnswers').html("Correct Answers: " + correctAnswer);
