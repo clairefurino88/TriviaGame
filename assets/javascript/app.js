@@ -5,7 +5,7 @@ var triviaQuestions = [{
 },{
     question:"What is the largest Ocean?",
     answerList: ["Atlantic","Artic","Pacific","Indian"],
-    answer: 2
+    answer: 2 
 },{
     question:"What chess piece can move diagonally",
     answerList: ["King","Bishop", "Queen", "Knight"],
@@ -47,21 +47,21 @@ var messages = {
 }
 
 $('#startBtn').on('click', function(){
-	$(this).hide();
+	$(this).hide(); //hide start button
 	newGame();
 });
 
 $('#startOverBtn').on('click', function(){
-	$(this).hide();
+	$(this).hide(); //hiding start over button
 	newGame();
 });
 
 function newGame(){
-	$('#finalMessage').empty();
+	$('#finalMessage').empty(); //resetting messages
 	$('#correctAnswers').empty();
 	$('#incorrectAnswers').empty();
 	$('#unanswered').empty();
-	currentQuestion = 0;
+	currentQuestion = 0; 
 	correctAnswer = 0;
 	incorrectAnswer = 0;
 	unanswered = 0;
@@ -76,20 +76,22 @@ function newQuestion(){
 	//sets up new questions & answerList
     $('#currentQuestion').html('You are on Question '+(currentQuestion+1)+' out of ' + triviaQuestions.length);
     
-	$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
+	$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');//
+	//using the array triviaQuestions to find the first question at the index (0) using the [currentQuestion] variable
 	for(var i = 0; i < 4; i++){
-		var choices = $('<div>');
-		choices.text(triviaQuestions[currentQuestion].answerList[i]);
-		choices.attr({'data-index': i });
-		choices.addClass('thisChoice');
-		$('.answerList').append(choices);
+		var choices = $('<div>'); //create div element
+		choices.text(triviaQuestions[currentQuestion].answerList[i]); //setting the text of each option inside the div element
+		choices.attr({'data-index': i }); //assigning an index to each div element
+		choices.addClass('thisChoice'); //adding a class to style each option
+		$('.optionsList').append(choices); //parent div class for newly created div element (choices) for options - a place to display answers
 	}
 	countdown();
 	//clicking an answer will pause the time and setup answerPage
-	$('.thisChoice').on('click',function(){
-		userSelect = $(this).data('index');
-		clearInterval(time);
-		answerPage();
+
+	$('.thisChoice').on('click',function(){ //newly created div calss is thisChoice
+		userSelect = $(this).data('index'); //taking data index value
+		clearInterval(time); //restarting time
+		answerPage(); //running anwerpage
 	});
 }
 
@@ -104,6 +106,7 @@ function countdown(){
 function showCountdown(){
 	seconds--;
 	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+	
 	if(seconds < 1){
 		clearInterval(time);
 		answered = false;
@@ -112,12 +115,13 @@ function showCountdown(){
 }
 
 function answerPage(){
-	$('#currentQuestion').empty();
-	$('.thisChoice').empty(); //Clears question page
-	$('.question').empty();
+	$('#currentQuestion').empty(); //clearing question reference
+	$('.thisChoice').empty(); //Clears options p
+	$('.question').empty(); //clears question
 
-	var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
 	var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
+	var rightAnswerText = triviaQuestions[currentQuestion].answerList[rightAnswerIndex];
+	
 	
 	//checks to see correct, incorrect, or unanswered
 	if((userSelect == rightAnswerIndex) && (answered == true)){
